@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styled from "styled-components";
-
 import Section from "./components/Section";
 import FeedbackOptions from "./components/FeedbackOptions";
 import Statistics from "./components/Statistics";
@@ -10,7 +9,7 @@ function App() {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const options = ["good", "neutral", "bad"];
+  const options = { good, neutral, bad };
 
   const leaveFeedback = (event) => {
     const { name } = event.target.dataset;
@@ -36,7 +35,10 @@ function App() {
   return (
     <Container>
       <Section title={"Please leave feedback"}>
-        <FeedbackOptions options={options} onLeaveFeedback={leaveFeedback} />
+        <FeedbackOptions
+          options={Object.keys(options)}
+          onLeaveFeedback={leaveFeedback}
+        />
       </Section>
 
       <Section title="Statistics">
