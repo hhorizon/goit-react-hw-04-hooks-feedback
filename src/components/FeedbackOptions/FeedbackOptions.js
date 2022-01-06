@@ -15,9 +15,8 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
           <FeedbackOptionsItem key={option}>
             <FeedbackBtn
               type="button"
-              data-name={option}
-              onClick={(event) => {
-                onLeaveFeedback(event);
+              onClick={() => {
+                onLeaveFeedback(option);
               }}
             >
               {buttonName}

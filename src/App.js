@@ -11,10 +11,8 @@ function App() {
 
   const options = { good, neutral, bad };
 
-  const leaveFeedback = (event) => {
-    const { name } = event.target.dataset;
-
-    switch (name) {
+  const leaveFeedback = (option) => {
+    switch (option) {
       case "good":
         setGood((state) => state + 1);
         break;
